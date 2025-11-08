@@ -10,6 +10,7 @@ import { ArrowRight, Brain, Calendar, MapPin, Package, Sparkles, Users } from "l
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { Toaster, toast } from "sonner"
 
 export default function KolazLanding() {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
@@ -37,22 +38,34 @@ export default function KolazLanding() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // TODO: Add actual email collection logic here (e.g., API call)
-    console.log("[v0] Email submitted:", email)
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      })
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}))
+        throw new Error(typeof data.error === "string" ? data.error : "No pudimos registrarte.")
+      }
 
-    setIsSubmitting(false)
-    setEmail("")
-    setIsEmailModalOpen(false)
-
-    // Show success message (you can add a toast notification here)
-    alert("¡Gracias! Te notificaremos cuando lancemos Kolaz.")
+      toast.success("¡Listo! Te avisaremos cuando lancemos Kolaz.")
+      setEmail("")
+      setIsEmailModalOpen(false)
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "No pudimos registrarte. Inténtalo nuevamente."
+      toast.error(message)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
     <div className="min-h-screen bg-background">
+      <Toaster position="top-center" richColors closeButton />
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#FF0000] backdrop-blur">
         <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
