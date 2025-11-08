@@ -8,12 +8,30 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Input } from "@/components/ui/input"
 import { ArrowRight, Brain, Calendar, MapPin, Package, Sparkles, Users } from "lucide-react"
 import Image from "next/image"
-import { useState } from "react"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 export default function KolazLanding() {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  useEffect(() => {
+    const hasScrollRestoration = "scrollRestoration" in window.history
+    const previousRestoration = hasScrollRestoration ? window.history.scrollRestoration : null
+
+    if (hasScrollRestoration) {
+      window.history.scrollRestoration = "manual"
+    }
+
+    window.scrollTo({ top: 0, behavior: "auto" })
+
+    return () => {
+      if (hasScrollRestoration && previousRestoration) {
+        window.history.scrollRestoration = previousRestoration
+      }
+    }
+  }, [])
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -39,13 +57,15 @@ export default function KolazLanding() {
       <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#FF0000] backdrop-blur">
         <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
           <div className="flex items-center gap-2">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imag2e-YCSsxyA9MGcWS017lPzUCiHeT9noYt.png"
-              alt="Kolaz"
-              width={60}
-              height={60}
-              className="h-12 w-12"
-            />
+            <Link href="/" className="cursor-pointer">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imag2e-YCSsxyA9MGcWS017lPzUCiHeT9noYt.png"
+                alt="Kolaz"
+                width={60}
+                height={60}
+                className="h-12 w-12"
+              />
+            </Link>
           </div>
           <Button
             size="lg"
@@ -60,10 +80,10 @@ export default function KolazLanding() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-background py-20 md:py-32">
+      <section className="relative overflow-hidden bg-background pt-24 pb-20 md:pt-32 md:pb-32 z-0">
         <div className="container mx-auto max-w-7xl px-6">
           <div className="flex flex-col items-center justify-center text-center">
-            <div className="mb-12 w-full max-w-4xl animate-hero-logo-appear animate-hero-logo-move-up">
+            <div className="mb-12 w-full max-w-4xl animate-hero-logo-appear animate-hero-logo-move-up relative z-0">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagekolaz-sKxvO78UHBSBzYvglSoV0dm0FchcQO.png"
                 alt="Kolaz"
@@ -248,7 +268,7 @@ export default function KolazLanding() {
       {/* For Partners */}
       <section id="socios" className="py-20 md:py-32">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="rounded-3xl bg-gradient-to-br from-primary via-primary/90 to-primary/80 p-12 text-center text-primary-foreground md:p-20">
+          <div className="rounded-3xl bg-primary p-12 text-center text-primary-foreground md:p-20">
             <h2 className="text-balance text-4xl font-bold tracking-tight md:text-5xl">
               ¿Eres veterinario o tienda de mascotas?
             </h2>
