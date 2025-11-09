@@ -10,7 +10,6 @@ import { ArrowRight, Brain, Calendar, MapPin, Package, Sparkles, Users } from "l
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { Toaster, toast } from "sonner"
 
 export default function KolazLanding() {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
@@ -18,54 +17,29 @@ export default function KolazLanding() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
-    const hasScrollRestoration = "scrollRestoration" in window.history
-    const previousRestoration = hasScrollRestoration ? window.history.scrollRestoration : null
-
-    if (hasScrollRestoration) {
-      window.history.scrollRestoration = "manual"
-    }
-
-    window.scrollTo({ top: 0, behavior: "auto" })
-
-    return () => {
-      if (hasScrollRestoration && previousRestoration) {
-        window.history.scrollRestoration = previousRestoration
-      }
-    }
+    window.scrollTo(0, 0)
   }, [])
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    try {
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      })
+    // TODO: Add actual email collection logic here (e.g., API call)
+    console.log("[v0] Email submitted:", email)
 
-      if (!response.ok) {
-        const data = await response.json().catch(() => ({}))
-        throw new Error(typeof data.error === "string" ? data.error : "No pudimos registrarte.")
-      }
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1000))
 
-      toast.success("¡Listo! Te avisaremos cuando lancemos Kolaz.")
-      setEmail("")
-      setIsEmailModalOpen(false)
-    } catch (error) {
-      const message = error instanceof Error ? error.message : "No pudimos registrarte. Inténtalo nuevamente."
-      toast.error(message)
-    } finally {
-      setIsSubmitting(false)
-    }
+    setIsSubmitting(false)
+    setEmail("")
+    setIsEmailModalOpen(false)
+
+    // Show success message (you can add a toast notification here)
+    alert("¡Gracias! Te notificaremos cuando lancemos Kolaz.")
   }
 
   return (
     <div className="min-h-screen bg-background">
-      <Toaster position="top-center" richColors closeButton />
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#FF0000] backdrop-blur">
         <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
@@ -96,7 +70,7 @@ export default function KolazLanding() {
       <section className="relative overflow-hidden bg-background pt-24 pb-20 md:pt-32 md:pb-32 z-0">
         <div className="container mx-auto max-w-7xl px-6">
           <div className="flex flex-col items-center justify-center text-center">
-            <div className="mb-12 w-full max-w-4xl animate-hero-logo-appear animate-hero-logo-move-up relative z-0">
+            <div className="mb-12 w-full max-w-4xl animate-hero-logo-appear animate-hero-logo-move-up relative z-10">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagekolaz-sKxvO78UHBSBzYvglSoV0dm0FchcQO.png"
                 alt="Kolaz"
@@ -267,10 +241,10 @@ export default function KolazLanding() {
             </div>
             <div className="relative lg:order-1">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-11-03%20160207-gbINqFCpWXJSo9XwunaRgUIRlTT1CG.png"
+                src="/kolazcity.png"
                 alt="Mapa de red de socios locales en Chile"
-                width={500}
-                height={500}
+                width={800}
+                height={450}
                 className="rounded-3xl"
               />
             </div>
