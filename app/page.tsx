@@ -253,13 +253,13 @@ export default function KolazLanding() {
       </section>
 
       {/* For Partners */}
-      <section id="socios" className="py-20 md:py-32">
+      <div className="py-20 md:py-32">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="rounded-3xl bg-primary p-12 text-center text-primary-foreground md:p-20">
+          <div className="rounded-3xl bg-[#FF0000] p-12 text-center text-white md:p-20">
             <h2 className="text-balance text-4xl font-bold tracking-tight md:text-5xl">
               ¿Eres veterinario o tienda de mascotas?
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-primary-foreground/90">
+            <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-white/90">
               Únete a nuestra red de socios y aumenta tus ventas con pedidos automáticos de clientes locales. Sin costos
               de inventario, solo entregas.
             </p>
@@ -271,14 +271,16 @@ export default function KolazLanding() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full border-2 border-primary-foreground/20 bg-transparent text-lg text-primary-foreground hover:bg-primary-foreground/10"
+                className="rounded-full border-2 border-white/20 bg-transparent text-lg text-white hover:bg-white/10"
               >
                 Más Información
               </Button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      <section id="socios"></section>
 
       {/* Footer */}
       <footer id="contacto" className="border-t border-border bg-muted/30 py-12">
