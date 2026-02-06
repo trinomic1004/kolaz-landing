@@ -54,15 +54,25 @@ export default function KolazLanding() {
               />
             </Link>
           </div>
-          <Button
-            size="lg"
-            className="rounded-full bg-white text-[#FF0000] hover:bg-white/90"
-            onClick={() => {
-              document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })
-            }}
-          >
-            Contáctanos
-          </Button>
+          <div className="flex items-center gap-4">
+            <Link href="/demo">
+              <Button
+                size="lg"
+                className="rounded-full bg-white text-[#FF0000] hover:bg-white/90"
+              >
+                Demo
+              </Button>
+            </Link>
+            <Button
+              size="lg"
+              className="rounded-full bg-white text-[#FF0000] hover:bg-white/90"
+              onClick={() => {
+                document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })
+              }}
+            >
+              Contáctanos
+            </Button>
+          </div>
         </div>
       </header>
 
