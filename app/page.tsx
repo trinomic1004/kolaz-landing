@@ -91,10 +91,12 @@ export default function KolazLanding() {
               />
             </div>
             <div className="space-y-8 w-full max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] animate-hero-text-slide-up px-4">
-              <div className="inline-flex items-center gap-2 rounded-full border-2 border-[#FFD700] bg-[#FFD700]/20 px-6 py-3 text-base font-bold text-foreground">
-                <Sparkles className="h-5 w-5 text-[#FFD700]" />
-                PRÓXIMAMENTE
-              </div>
+              <Link href="/demo">
+                <div className="inline-flex items-center gap-2 rounded-full border-2 border-[#25D366] bg-[#25D366]/20 px-6 py-3 text-base font-bold text-foreground cursor-pointer hover:bg-[#25D366]/30 transition-colors">
+                  <Sparkles className="h-5 w-5 text-[#25D366]" />
+                  Demo ya disponible
+                </div>
+              </Link>
               <h1 className="text-balance text-3xl font-extrabold leading-tight tracking-wider text-foreground md:text-4xl lg:text-5xl xl:text-6xl">
                 El alimento perfecto para tu mascota, siempre a tiempo
               </h1>
