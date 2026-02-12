@@ -267,12 +267,17 @@
   /* Crop logo whitespace - removes excess vertical padding */
   .logo-crop {
     overflow: hidden;
-    padding: 0 10%;
+    padding: 0;
+    max-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .logo-crop img {
-    margin-top: -8%;
-    margin-bottom: -8%;
+    margin-top: -20%;
+    margin-bottom: -20%;
+    transform: scale(1.2);
   }
 
   .logo-reflection {
