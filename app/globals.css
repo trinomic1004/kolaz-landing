@@ -170,4 +170,28 @@
     animation: hero-text-slide-up 0.8s ease-out 1.2s forwards;
     opacity: 0;
   }
+
+  .logo-reflection {
+    -webkit-box-reflect: below 2px linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, 0.1));
+    box-reflect: below 2px linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, 0.1));
+  }
+
+  @supports not (-webkit-box-reflect: below) {
+    .logo-reflection {
+      position: relative;
+    }
+    
+    .logo-reflection::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), transparent);
+      transform: scaleY(-1);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
 }

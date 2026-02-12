@@ -86,7 +86,7 @@ export default function KolazLanding() {
                 alt="Kolaz"
                 width={800}
                 height={267}
-                className="w-full h-auto"
+                className="w-full h-auto logo-reflection"
                 priority
               />
             </div>
