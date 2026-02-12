@@ -264,6 +264,17 @@
     animation-delay: 2s;
   }
 
+  /* Crop logo whitespace - removes excess vertical padding */
+  .logo-crop {
+    overflow: hidden;
+    padding: 0 10%;
+  }
+
+  .logo-crop img {
+    margin-top: -8%;
+    margin-bottom: -8%;
+  }
+
   .logo-reflection {
     -webkit-box-reflect: below 2px linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, 0.1));
     box-reflect: below 2px linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, 0.1));

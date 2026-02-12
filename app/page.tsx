@@ -117,7 +117,7 @@ export default function KolazLanding() {
       <section className="relative overflow-hidden bg-gradient-to-b from-background via-background to-muted/20 pt-24 pb-20 md:pt-32 md:pb-32 z-0">
         <div className="container mx-auto max-w-7xl px-6">
           <div className="flex flex-col items-center justify-center text-center">
-            <div className="mb-12 w-full max-w-4xl animate-hero-logo-appear animate-hero-logo-move-up relative z-10 logo-shine logo-reflection">
+            <div className="mb-12 w-full max-w-4xl animate-hero-logo-appear animate-hero-logo-move-up relative z-10 logo-shine logo-reflection logo-crop">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagekolaz-sKxvO78UHBSBzYvglSoV0dm0FchcQO.png"
                 alt="Kolaz"
