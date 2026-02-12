@@ -81,7 +81,7 @@ export default function KolazLanding() {
       <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#FF0000]/95 backdrop-blur-xl shadow-premium">
         <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
           <div className="flex items-center gap-2">
-            <Link href="/" className="cursor-pointer">
+            <Link href="/" className="cursor-pointer hover:scale-105 transition-transform duration-300">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imag2e-YCSsxyA9MGcWS017lPzUCiHeT9noYt.png"
                 alt="Kolaz"
@@ -116,18 +116,18 @@ export default function KolazLanding() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-background via-background to-muted/20 pt-24 pb-20 md:pt-32 md:pb-32 z-0">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="flex flex-col items-center justify-center text-center">
-            <div className="mb-12 w-full max-w-4xl animate-hero-logo-appear animate-hero-logo-move-up relative z-10 logo-shine logo-reflection logo-crop">
+          <div className="flex flex-col items-center justify-center gap-8 text-center md:gap-10">
+            <div className="relative z-10 w-full max-w-[640px] px-2 sm:max-w-[720px] lg:max-w-[780px] animate-hero-logo-appear animate-hero-logo-move-up logo-shine">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagekolaz-sKxvO78UHBSBzYvglSoV0dm0FchcQO.png"
+                src="/kolaz-main-logo.png"
                 alt="Kolaz"
-                width={800}
-                height={267}
+                width={1143}
+                height={278}
                 className="w-full h-auto"
                 priority
               />
             </div>
-            <div className="space-y-8 w-full max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] animate-hero-text-slide-up px-4">
+            <div className="relative z-20 w-full max-w-5xl space-y-8 animate-hero-text-slide-up px-4">
               <Link href="/demo">
                 <div className="inline-flex items-center gap-3 rounded-full border-2 border-[#25D366] bg-[#25D366]/20 px-8 py-4 text-base md:text-lg font-bold text-foreground cursor-pointer hover:bg-[#25D366]/30 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-float-slow">
                   <Sparkles className="h-6 w-6 text-[#25D366] animate-pulse" />
@@ -135,7 +135,7 @@ export default function KolazLanding() {
                 </div>
               </Link>
               <h1 className="text-balance text-3xl font-extrabold leading-tight tracking-wide text-foreground md:text-5xl lg:text-6xl xl:text-7xl drop-shadow-sm">
-                El alimento perfecto para tu mascota, <span className="text-primary">siempre a tiempo</span>
+                El alimento perfecto para tu mascota, <span className="hero-wordmark text-primary">siempre a tiempo</span>
               </h1>
               <p className="text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl lg:text-2xl max-w-4xl mx-auto">
                 Kolaz predice cuándo tu mascota necesita alimento y lo entrega automáticamente a través de veterinarios
@@ -200,7 +200,9 @@ export default function KolazLanding() {
               },
             ].map((step, i) => (
               <Card key={i} className={`scroll-animate stagger-${i + 1} premium-card relative overflow-hidden border-2 p-8 glass-card shadow-premium-lg group`}>
-                <div className="absolute right-4 top-4 text-7xl font-bold text-primary/5 group-hover:text-primary/10 transition-colors">{step.number}</div>
+                <div className="absolute right-4 top-4 text-7xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-300">
+                  {step.number}
+                </div>
                 <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <step.icon className="h-8 w-8 text-primary" />
                 </div>

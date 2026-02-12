@@ -1,12 +1,18 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Outfit } from "next/font/google"
+import { Instrument_Serif, Outfit } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
+})
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-display",
 })
 
 export const metadata: Metadata = {
@@ -23,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${outfit.className} font-sans antialiased`}>
+      <body className={`${outfit.className} ${instrumentSerif.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

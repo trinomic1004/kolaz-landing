@@ -161,18 +161,18 @@
       transform: translateY(0);
     }
     100% {
-      transform: translateY(-112px);
+      transform: translateY(-24px);
     }
   }
 
   @keyframes hero-text-slide-up {
     0% {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(32px);
     }
     100% {
       opacity: 1;
-      transform: translateY(-200px);
+      transform: translateY(0);
     }
   }
 
@@ -264,22 +264,6 @@
     animation-delay: 2s;
   }
 
-  /* Crop logo whitespace - removes excess vertical padding */
-  .logo-crop {
-    overflow: hidden;
-    padding: 0;
-    max-height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .logo-crop img {
-    margin-top: -20%;
-    margin-bottom: -20%;
-    transform: scale(1.2);
-  }
-
   .logo-reflection {
     -webkit-box-reflect: below 2px linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, 0.1));
     box-reflect: below 2px linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, 0.1));
@@ -338,7 +322,9 @@
 
   @keyframes float-slow {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(2deg); }
+    25% { transform: translateY(-8px) rotate(-2deg); }
+    50% { transform: translateY(-15px) rotate(0deg); }
+    75% { transform: translateY(-8px) rotate(2deg); }
   }
 
   .animate-float {
@@ -347,6 +333,16 @@
 
   .animate-float-slow {
     animation: float-slow 6s ease-in-out infinite;
+  }
+
+  .hero-wordmark {
+    font-family: var(--font-display), "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    display: inline-block;
+    text-shadow:
+      0 2px 0 rgba(255, 255, 255, 0.35),
+      0 12px 24px rgba(255, 0, 0, 0.2);
   }
 
   /* Gradient Text */
