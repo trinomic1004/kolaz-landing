@@ -340,9 +340,7 @@
     font-weight: 400;
     letter-spacing: -0.03em;
     display: inline-block;
-    text-shadow:
-      0 2px 0 rgba(255, 255, 255, 0.35),
-      0 12px 24px rgba(255, 0, 0, 0.2);
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.35);
   }
 
   /* Gradient Text */

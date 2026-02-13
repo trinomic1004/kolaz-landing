@@ -114,9 +114,9 @@ export default function KolazLanding() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background via-background to-muted/20 pt-24 pb-20 md:pt-32 md:pb-32 z-0">
+      <section className="relative z-0 overflow-hidden bg-gradient-to-b from-background via-background to-muted/20 pt-24 pb-24 md:pt-32 md:pb-36">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="flex flex-col items-center justify-center gap-8 text-center md:gap-10">
+          <div className="flex flex-col items-center justify-center gap-10 text-center md:gap-12">
             <div className="relative z-10 w-full max-w-[640px] px-2 sm:max-w-[720px] lg:max-w-[780px] animate-hero-logo-appear animate-hero-logo-move-up logo-shine">
               <Image
                 src="/kolaz-main-logo.png"
@@ -127,7 +127,7 @@ export default function KolazLanding() {
                 priority
               />
             </div>
-            <div className="relative z-20 w-full max-w-5xl space-y-8 animate-hero-text-slide-up px-4">
+            <div className="relative z-20 w-full max-w-5xl space-y-6 animate-hero-text-slide-up px-4 md:space-y-8">
               <Link href="/demo">
                 <div className="inline-flex items-center gap-3 rounded-full border-2 border-[#25D366] bg-[#25D366]/20 px-8 py-4 text-base md:text-lg font-bold text-foreground cursor-pointer hover:bg-[#25D366]/30 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-float-slow">
                   <Sparkles className="h-6 w-6 text-[#25D366] animate-pulse" />
@@ -141,7 +141,7 @@ export default function KolazLanding() {
                 Kolaz predice cuándo tu mascota necesita alimento y lo entrega automáticamente a través de veterinarios
                 y tiendas locales de confianza.
               </p>
-              <div className="flex flex-col gap-4 sm:flex-row justify-center">
+              <div className="flex flex-col justify-center gap-4 pt-1 sm:flex-row md:gap-5">
                 <Button
                   size="lg"
                   className="rounded-full bg-primary text-lg text-primary-foreground hover:bg-primary/90 btn-glow shadow-premium-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
@@ -165,17 +165,17 @@ export default function KolazLanding() {
       </section>
 
       {/* How It Works */}
-      <section id="como-funciona" className="relative bg-gradient-to-b from-muted/30 via-background to-background py-20 md:py-32 overflow-hidden">
+      <section id="como-funciona" className="relative overflow-hidden bg-gradient-to-b from-muted/30 via-background to-background py-24 md:py-32">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="mb-16 text-center scroll-animate">
+          <div className="mb-14 text-center scroll-animate md:mb-16">
             <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl mb-4">
-              Cómo funcionará Kolaz
+              Cómo funciona Kolaz
             </h2>
-            <p className="mt-4 text-pretty text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
               Tres pasos simples para nunca quedarte sin alimento
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3 md:gap-8">
             {[
               {
                 number: "01",
@@ -199,7 +199,7 @@ export default function KolazLanding() {
                   "Enviamos pedidos a veterinarios y tiendas cercanas según precio, stock, distancia y SLA. Tú solo disfrutas tiempo con tu mascota.",
               },
             ].map((step, i) => (
-              <Card key={i} className={`scroll-animate stagger-${i + 1} premium-card relative overflow-hidden border-2 p-8 glass-card shadow-premium-lg group`}>
+              <Card key={i} className={`scroll-animate stagger-${i + 1} premium-card relative overflow-hidden border-2 p-7 md:p-8 glass-card shadow-premium-lg group`}>
                 <div className="absolute right-4 top-4 text-7xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-300">
                   {step.number}
                 </div>
@@ -215,9 +215,9 @@ export default function KolazLanding() {
       </section>
 
       {/* Benefits Section */}
-      <section id="beneficios" className="relative py-20 md:py-32 overflow-hidden">
+      <section id="beneficios" className="relative overflow-hidden py-24 md:py-32">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="grid items-center gap-12 lg:gap-16 lg:grid-cols-2">
+          <div className="grid items-center gap-10 md:gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="relative scroll-animate group">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
               <Image
@@ -228,15 +228,15 @@ export default function KolazLanding() {
                 className="relative rounded-3xl shadow-premium-lg hover:shadow-2xl transition-shadow duration-500"
               />
             </div>
-            <div className="space-y-6 scroll-animate">
+            <div className="space-y-7 scroll-animate">
               <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
                 Nutrición inteligente para cada mascota
               </h2>
-              <p className="text-pretty text-lg md:text-xl leading-relaxed text-muted-foreground">
+              <p className="max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
                 Nuestro motor de IA analiza el perfil completo de tu mascota para recomendar la dieta óptima y predecir
                 exactamente cuándo necesitará más alimento.
               </p>
-              <ul className="space-y-5 pt-4">
+              <ul className="space-y-4 pt-3 md:space-y-5 md:pt-4">
                 {[
                   "Predicción precisa de consumo basada en perfil único",
                   "Recomendaciones personalizadas de dieta",
@@ -254,7 +254,7 @@ export default function KolazLanding() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-foreground text-base md:text-lg font-medium">{benefit}</span>
+                    <span className="text-foreground text-base font-medium leading-relaxed md:text-lg">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -264,10 +264,10 @@ export default function KolazLanding() {
       </section>
 
       {/* Local Network */}
-      <section className="relative bg-gradient-to-b from-background via-muted/30 to-background py-20 md:py-32">
+      <section className="relative bg-gradient-to-b from-background via-muted/30 to-background py-24 md:py-32">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="grid items-center gap-12 lg:gap-16 lg:grid-cols-2">
-            <div className="space-y-8 lg:order-2 scroll-animate">
+          <div className="grid items-center gap-10 md:gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="space-y-7 scroll-animate md:space-y-8 lg:order-2">
               <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
                 Red local de confianza
               </h2>
@@ -275,18 +275,18 @@ export default function KolazLanding() {
                 Trabajamos con veterinarios y tiendas de mascotas en toda Chile. Tu pedido se enruta al socio más
                 cercano con el mejor precio y disponibilidad.
               </p>
-              <div className="grid gap-5 sm:grid-cols-2 pt-4">
+              <div className="grid gap-4 pt-3 sm:grid-cols-2 md:pt-4">
                 {[
                   { icon: MapPin, text: "Entrega desde socios cercanos" },
                   { icon: Calendar, text: "Suscripciones flexibles" },
                   { icon: Package, text: "Sin inventario centralizado" },
                   { icon: Sparkles, text: "Precios competitivos" },
                 ].map((item, i) => (
-                  <div key={i} className={`scroll-animate stagger-${i + 1} flex items-center gap-4 p-4 rounded-2xl bg-accent/5 hover:bg-accent/10 transition-colors group`}>
+                  <div key={i} className={`scroll-animate stagger-${i + 1} flex items-center gap-4 rounded-2xl bg-accent/5 p-4 transition-colors hover:bg-accent/10 group md:p-5`}>
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent/30 to-accent/10 shadow-md group-hover:scale-110 transition-transform">
                       <item.icon className="h-6 w-6 text-accent-foreground" />
                     </div>
-                    <span className="font-semibold text-foreground text-base">{item.text}</span>
+                    <span className="text-base font-semibold leading-snug text-foreground">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -306,22 +306,22 @@ export default function KolazLanding() {
       </section>
 
       {/* For Partners */}
-      <div className="py-20 md:py-32 scroll-animate">
+      <div className="py-24 md:py-32 scroll-animate">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#FF0000] via-[#FF0000] to-[#CC0000] p-12 text-center text-white md:p-20 shadow-premium-lg overflow-hidden">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#FF0000] via-[#FF0000] to-[#CC0000] p-8 text-center text-white shadow-premium-lg md:p-12 lg:p-16">
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
             
             <div className="relative z-10">
-              <h2 className="text-balance text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-6">
+              <h2 className="mx-auto mb-6 max-w-4xl text-balance text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
                 ¿Eres veterinario o tienda de mascotas?
               </h2>
-              <p className="mx-auto mt-6 max-w-3xl text-pretty text-lg md:text-xl leading-relaxed text-white/95">
+              <p className="mx-auto mt-5 max-w-3xl text-pretty text-lg leading-relaxed text-white/95 md:text-xl">
                 Únete a nuestra red de socios y aumenta tus ventas con pedidos automáticos de clientes locales. Sin costos
                 de inventario, solo entregas.
               </p>
-              <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
+              <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
                 <Button size="lg" variant="secondary" className="rounded-full text-lg shadow-premium-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold">
                   Registra tu Interés
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -342,10 +342,10 @@ export default function KolazLanding() {
       <section id="socios"></section>
 
       {/* Footer */}
-      <footer id="contacto" className="relative border-t border-border/50 bg-gradient-to-b from-muted/30 to-muted/50 py-16 backdrop-blur-sm">
+      <footer id="contacto" className="relative border-t border-border/50 bg-gradient-to-b from-muted/30 to-muted/50 py-16 backdrop-blur-sm md:py-20">
         <div className="container mx-auto max-w-7xl px-6">
-          <div className="grid gap-12 md:grid-cols-2 lg:gap-16">
-            <div className="space-y-6">
+          <div className="grid gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
+            <div className="space-y-5">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-removebg-preview-WP6xtRE2l7XPa0wKnQiedcQvblgW9U.png"
                 alt="Kolaz"
@@ -358,7 +358,7 @@ export default function KolazLanding() {
               </p>
             </div>
             <div>
-              <h3 className="mb-6 text-xl font-bold text-foreground">Contáctanos</h3>
+              <h3 className="mb-5 text-xl font-bold text-foreground">Contáctanos</h3>
               <ul className="space-y-4 text-base text-muted-foreground">
                 <li className="flex items-center gap-3 group">
                   <span className="font-semibold text-foreground min-w-[80px]">Teléfono:</span>
@@ -375,7 +375,7 @@ export default function KolazLanding() {
               </ul>
             </div>
           </div>
-          <div className="mt-16 border-t border-border/50 pt-8 text-center">
+          <div className="mt-14 border-t border-border/50 pt-8 text-center md:mt-16">
             <p className="text-sm text-muted-foreground">&copy; 2025 Kolaz. Todos los derechos reservados.</p>
           </div>
         </div>
