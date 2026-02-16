@@ -22,14 +22,24 @@ export default function DemoPage() {
               />
             </Link>
           </div>
-          <Link href="/">
-            <Button
-              size="lg"
-              className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
-            >
-              Volver al Inicio
-            </Button>
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link href="/food-recommender">
+              <Button
+                size="lg"
+                className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
+              >
+                Food Recommender
+              </Button>
+            </Link>
+            <Link href="/">
+              <Button
+                size="lg"
+                className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
+              >
+                Volver al Inicio
+              </Button>
+            </Link>
+          </div>
         </div>
       </header>
 

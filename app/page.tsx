@@ -100,6 +100,14 @@ export default function KolazLanding() {
                 Demo
               </Button>
             </Link>
+            <Link href="/food-recommender">
+              <Button
+                size="lg"
+                className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
+              >
+                Food Recommender
+              </Button>
+            </Link>
             <Button
               size="lg"
               className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"

@@ -1,0 +1,106 @@
+- generic [active] [ref=e1]:
+  - button "Open Next.js Dev Tools" [ref=e166] [cursor=pointer]:
+    - img [ref=e167]
+  - alert [ref=e170]
+  - generic [ref=e171]:
+    - banner [ref=e172]:
+      - generic [ref=e173]:
+        - link "Kolaz" [ref=e174] [cursor=pointer]:
+          - /url: /
+          - img "Kolaz" [ref=e175]
+        - generic [ref=e176]:
+          - link "Inicio" [ref=e177] [cursor=pointer]:
+            - /url: /
+            - button "Inicio" [ref=e178]
+          - link "Demo" [ref=e179] [cursor=pointer]:
+            - /url: /demo
+            - button "Demo" [ref=e180]
+    - main [ref=e181]:
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - img [ref=e185]
+          - text: NUTRICIÓN PERSONALIZADA
+        - heading "Recomendador de alimento para tu mascota" [level=1] [ref=e187]
+        - paragraph [ref=e188]: Prueba nuestra tecnología de IA para recomendarte el alimento perfecto para tu mascota!
+      - generic [ref=e189]:
+        - generic [ref=e190]:
+          - generic [ref=e191]:
+            - generic [ref=e192]:
+              - heading "Perfil de Mascota" [level=2] [ref=e193]
+              - paragraph [ref=e194]: Danos los datos de tu mascota y te recomendaremos alimentos que se ajusten a sus necesidades!
+            - img [ref=e196]
+          - generic [ref=e201]:
+            - generic [ref=e202]:
+              - generic [ref=e203]:
+                - generic [ref=e204]: Nombre
+                - textbox [ref=e205]
+              - generic [ref=e206]:
+                - generic [ref=e207]: Especie
+                - combobox [ref=e208]:
+                  - option "Perro" [selected]
+                  - option "Gato"
+              - generic [ref=e209]:
+                - generic [ref=e210]: Sexo
+                - combobox [ref=e211]:
+                  - option "Macho" [selected]
+                  - option "Hembra"
+              - generic [ref=e212]:
+                - generic [ref=e213]: Edad (valor)
+                - spinbutton [ref=e214]
+              - generic [ref=e215]:
+                - generic [ref=e216]: Edad (unidad)
+                - combobox [ref=e217]:
+                  - option "Años" [selected]
+                  - option "Meses"
+              - generic [ref=e218]:
+                - generic [ref=e219]: Peso (kg)
+                - spinbutton [ref=e220]
+              - generic [ref=e221]:
+                - generic [ref=e222]: Raza
+                - textbox [ref=e223]
+              - generic [ref=e224]:
+                - generic [ref=e225]: Estado sexual
+                - combobox [ref=e226]:
+                  - option "Intacto"
+                  - option "Esterilizado" [selected]
+              - generic [ref=e227]:
+                - generic [ref=e228]: Nivel de actividad
+                - combobox [ref=e229]:
+                  - option "Alto"
+                  - option "Medio" [selected]
+                  - option "Bajo"
+              - generic [ref=e230]:
+                - generic [ref=e231]: Condición corporal
+                - combobox [ref=e232]:
+                  - option "Delgado"
+                  - option "Ideal" [selected]
+                  - option "Sobrepeso"
+                  - option "Obeso"
+              - generic [ref=e233]:
+                - generic [ref=e234]: Objetivo de peso
+                - combobox [ref=e235]:
+                  - option "Mantener" [selected]
+                  - option "Bajar"
+                  - option "Subir"
+              - generic [ref=e236]:
+                - generic [ref=e237]: Comida extra
+                - combobox [ref=e238]:
+                  - option "Nada"
+                  - option "Poco" [selected]
+                  - option "Medio"
+                  - option "Mucho"
+            - generic [ref=e239]:
+              - generic [ref=e240]: Condiciones de salud
+              - 'textbox "Ej: ninguna, alergia a pollo, sensibilidad digestiva..." [ref=e241]': ninguna
+            - generic [ref=e242]:
+              - generic [ref=e243]: Dirección
+              - textbox "Dirección de despacho" [ref=e244]
+            - button "Recomendar alimentos" [ref=e245]:
+              - text: Recomendar alimentos
+              - img
+        - generic [ref=e246]:
+          - heading "Resultados" [level=2] [ref=e247]
+          - paragraph [ref=e248]: Se muestran hasta 6 opciones con imagen, explicación nutricional y nivel de confianza.
+          - generic [ref=e249]:
+            - img [ref=e251]
+            - paragraph [ref=e253]: Completa el formulario y presiona "Recomendar alimentos" para cargar los resultados.

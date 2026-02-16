@@ -1,0 +1,117 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Kolaz" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Kolaz" [ref=e7]
+        - generic [ref=e8]:
+          - link "Demo" [ref=e9] [cursor=pointer]:
+            - /url: /demo
+            - button "Demo" [ref=e10]
+          - link "Food Recommender" [ref=e11] [cursor=pointer]:
+            - /url: /food-recommender
+            - button "Food Recommender" [ref=e12]
+          - button "Contáctanos" [ref=e13]
+    - generic [ref=e16]:
+      - img "Kolaz" [ref=e18]
+      - generic [ref=e19]:
+        - link "Demo ya disponible" [ref=e20] [cursor=pointer]:
+          - /url: /demo
+          - generic [ref=e21]:
+            - img [ref=e22]
+            - text: Demo ya disponible
+        - heading "El alimento perfecto para tu mascota, siempre a tiempo" [level=1] [ref=e24]:
+          - text: El alimento perfecto para tu mascota,
+          - generic [ref=e25]: siempre a tiempo
+        - paragraph [ref=e26]: Kolaz predice cuándo tu mascota necesita alimento y lo entrega automáticamente a través de veterinarios y tiendas locales de confianza.
+        - generic [ref=e27]:
+          - button "Únete a la Lista de Espera" [ref=e28]:
+            - text: Únete a la Lista de Espera
+            - img
+          - button "Notifícame al Lanzamiento" [ref=e29]
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - heading "Cómo funciona Kolaz" [level=2] [ref=e33]
+        - paragraph [ref=e34]: Tres pasos simples para nunca quedarte sin alimento
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: "01"
+          - img [ref=e39]
+          - heading "Crea el perfil de tu mascota" [level=3] [ref=e44]
+          - paragraph [ref=e45]: Ingresa especie, raza, edad, peso, esterilización, actividad y sensibilidades. Nuestro sistema aprende las necesidades únicas de tu compañero.
+        - generic [ref=e46]:
+          - generic [ref=e47]: "02"
+          - img [ref=e49]
+          - heading "IA predice y recomienda" [level=3] [ref=e59]
+          - paragraph [ref=e60]: "Estimamos el consumo diario, predecimos fechas de reorden y recomendamos la dieta perfecta: mantenimiento, control de peso o alternativas prescritas."
+        - generic [ref=e61]:
+          - generic [ref=e62]: "03"
+          - img [ref=e64]
+          - heading "Entrega automática local" [level=3] [ref=e68]
+          - paragraph [ref=e69]: Enviamos pedidos a veterinarios y tiendas cercanas según precio, stock, distancia y SLA. Tú solo disfrutas tiempo con tu mascota.
+    - generic [ref=e72]:
+      - img "Mascota comiendo con su familia" [ref=e75]
+      - generic [ref=e76]:
+        - heading "Nutrición inteligente para cada mascota" [level=2] [ref=e77]
+        - paragraph [ref=e78]: Nuestro motor de IA analiza el perfil completo de tu mascota para recomendar la dieta óptima y predecir exactamente cuándo necesitará más alimento.
+        - list [ref=e79]:
+          - listitem [ref=e80]:
+            - img [ref=e82]
+            - generic [ref=e84]: Predicción precisa de consumo basada en perfil único
+          - listitem [ref=e85]:
+            - img [ref=e87]
+            - generic [ref=e89]: Recomendaciones personalizadas de dieta
+          - listitem [ref=e90]:
+            - img [ref=e92]
+            - generic [ref=e94]: Alertas tempranas para reabastecimiento
+          - listitem [ref=e95]:
+            - img [ref=e97]
+            - generic [ref=e99]: Ajustes automáticos según cambios de peso o actividad
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - heading "Red local de confianza" [level=2] [ref=e104]
+        - paragraph [ref=e105]: Trabajamos con veterinarios y tiendas de mascotas en toda Chile. Tu pedido se enruta al socio más cercano con el mejor precio y disponibilidad.
+        - generic [ref=e106]:
+          - generic [ref=e107]:
+            - img [ref=e109]
+            - generic [ref=e112]: Entrega desde socios cercanos
+          - generic [ref=e113]:
+            - img [ref=e115]
+            - generic [ref=e117]: Suscripciones flexibles
+          - generic [ref=e118]:
+            - img [ref=e120]
+            - generic [ref=e124]: Sin inventario centralizado
+          - generic [ref=e125]:
+            - img [ref=e127]
+            - generic [ref=e129]: Precios competitivos
+      - img "Mapa de red de socios locales en Chile" [ref=e132]
+    - generic [ref=e138]:
+      - heading "¿Eres veterinario o tienda de mascotas?" [level=2] [ref=e139]
+      - paragraph [ref=e140]: Únete a nuestra red de socios y aumenta tus ventas con pedidos automáticos de clientes locales. Sin costos de inventario, solo entregas.
+      - generic [ref=e141]:
+        - button "Registra tu Interés" [ref=e142]:
+          - text: Registra tu Interés
+          - img
+        - button "Más Información" [ref=e143]
+    - contentinfo [ref=e144]:
+      - generic [ref=e145]:
+        - generic [ref=e146]:
+          - generic [ref=e147]:
+            - img "Kolaz" [ref=e148]
+            - paragraph [ref=e149]: Marketplace inteligente de nutrición para mascotas en Chile.
+          - generic [ref=e150]:
+            - heading "Contáctanos" [level=3] [ref=e151]
+            - list [ref=e152]:
+              - listitem [ref=e153]:
+                - generic [ref=e154]: "Teléfono:"
+                - link "+569 90182719" [ref=e155] [cursor=pointer]:
+                  - /url: tel:+56990182719
+              - listitem [ref=e156]:
+                - generic [ref=e157]: "Email:"
+                - link "kolazpet@gmail.com" [ref=e158] [cursor=pointer]:
+                  - /url: mailto:kolazpet@gmail.com
+        - paragraph [ref=e160]: © 2025 Kolaz. Todos los derechos reservados.
+  - button "Open Next.js Dev Tools" [ref=e166] [cursor=pointer]:
+    - img [ref=e167]
+  - alert [ref=e170]
