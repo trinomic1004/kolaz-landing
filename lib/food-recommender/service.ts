@@ -316,6 +316,71 @@ function buildPetInsertPayload(input: RecommendationRequest, customerId: string)
   }
 }
 
+function pickKeys(source: JsonRecord, keys: string[]): JsonRecord {
+  const result: JsonRecord = {}
+  for (const key of keys) {
+    if (source[key] !== undefined) {
+      result[key] = source[key]
+    }
+  }
+  return result
+}
+
+async function insertPetWithFallbacks(payload: JsonRecord): Promise<JsonRecord | null> {
+  const attempts: JsonRecord[] = [
+    payload,
+    pickKeys(payload, [
+      "customer_id",
+      "nombre",
+      "especie",
+      "sexo",
+      "edad_valor",
+      "edad_unidad",
+      "peso_kg",
+      "raza",
+      "condiciones_salud",
+      "direccion",
+      "estado_sexual",
+      "nivel_actividad",
+    ]),
+    pickKeys(payload, [
+      "customer_id",
+      "nombre",
+      "especie",
+      "sexo",
+      "edad_valor",
+      "edad_unidad",
+      "peso_kg",
+      "raza",
+      "condiciones_salud",
+      "direccion",
+    ]),
+  ]
+
+  let lastError: SupabaseAdminError | null = null
+
+  for (const attempt of attempts) {
+    try {
+      return await insertPetRow(attempt)
+    } catch (error) {
+      if (error instanceof SupabaseAdminError) {
+        lastError = error
+        continue
+      }
+      throw error
+    }
+  }
+
+  if (lastError) {
+    console.error("[food-recommender] pets insert failed:", {
+      status: lastError.status,
+      message: lastError.message,
+    })
+  }
+
+  return null
+}
+
 function clampConfidence(value: number): number {
   if (!Number.isFinite(value)) {
     return 0
@@ -411,14 +476,11 @@ export async function recommendFoods(payload: unknown): Promise<RecommendationRe
 
   const customerId = input.customerId?.trim() || `web_${randomUUID()}`
 
-  let pet: JsonRecord
-  try {
-    pet = await insertPetRow(buildPetInsertPayload(input, customerId))
-  } catch (error) {
-    if (error instanceof SupabaseAdminError) {
-      throw new RecommenderHttpError(500, "No fue posible guardar la mascota en Supabase.")
-    }
-    throw error
+  const petInsertPayload = buildPetInsertPayload(input, customerId)
+  const persistedPet = await insertPetWithFallbacks(petInsertPayload)
+  const pet: JsonRecord = persistedPet ?? {
+    id: null,
+    ...petInsertPayload,
   }
 
   let foodsRows: JsonRecord[]
@@ -441,9 +503,13 @@ export async function recommendFoods(payload: unknown): Promise<RecommendationRe
   const llmRaw = await callFoodRecommenderLlm(aiInput)
   const { recommendations, notes } = mapRecommendations(foods, llmRaw)
 
+  const saveWarning = persistedPet
+    ? null
+    : "No fue posible guardar el perfil en Supabase en este intento, pero sí se generaron recomendaciones."
+
   return {
     pet,
     recommendations,
-    notes,
+    notes: saveWarning ? `${saveWarning} ${notes}` : notes,
   }
 }

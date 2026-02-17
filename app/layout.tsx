@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   description:
     "Marketplace inteligente que predice reabastecimiento y entrega el alimento perfecto para tu mascota a través de veterinarios y tiendas locales.",
   generator: "v0.app",
+  icons: {
+    icon: "/kolaz-main-logo.png",
+    shortcut: "/kolaz-main-logo.png",
+    apple: "/kolaz-main-logo.png",
+  },
 }
 
 export default function RootLayout({

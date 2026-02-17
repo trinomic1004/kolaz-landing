@@ -355,7 +355,6 @@ export default function FoodRecommenderPage() {
                   <Input
                     required
                     type="number"
-                    min="0.1"
                     step="0.1"
                     inputMode="decimal"
                     value={form.edad_valor}
@@ -377,7 +376,6 @@ export default function FoodRecommenderPage() {
                   <Input
                     required
                     type="number"
-                    min="0.1"
                     step="0.1"
                     inputMode="decimal"
                     value={form.peso_kg}

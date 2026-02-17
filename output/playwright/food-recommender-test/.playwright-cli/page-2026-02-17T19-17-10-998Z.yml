@@ -1,0 +1,180 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Kolaz" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Kolaz" [ref=e6]
+        - generic [ref=e7]:
+          - link "Inicio" [ref=e8] [cursor=pointer]:
+            - /url: /
+            - button "Inicio" [ref=e9]
+          - link "Demo" [ref=e10] [cursor=pointer]:
+            - /url: /demo
+            - button "Demo" [ref=e11]
+    - main [ref=e12]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - img [ref=e16]
+          - text: NUTRICIÓN PERSONALIZADA
+        - heading "Recomendador de alimento para tu mascota" [level=1] [ref=e18]
+        - paragraph [ref=e19]: Prueba nuestra tecnología de IA para recomendarte el alimento perfecto para tu mascota!
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - generic [ref=e22]:
+            - generic [ref=e23]:
+              - heading "Perfil de Mascota" [level=2] [ref=e24]
+              - paragraph [ref=e25]: Danos los datos de tu mascota y te recomendaremos alimentos que se ajusten a sus necesidades!
+            - img [ref=e27]
+          - generic [ref=e32]:
+            - generic [ref=e33]:
+              - generic [ref=e34]:
+                - generic [ref=e35]: Nombre
+                - textbox [ref=e36]: Luna
+              - generic [ref=e37]:
+                - generic [ref=e38]: Especie
+                - combobox [ref=e39]:
+                  - option "Perro" [selected]
+                  - option "Gato"
+              - generic [ref=e40]:
+                - generic [ref=e41]: Sexo
+                - combobox [ref=e42]:
+                  - option "Macho" [selected]
+                  - option "Hembra"
+              - generic [ref=e43]:
+                - generic [ref=e44]: Edad (valor)
+                - spinbutton [ref=e45]: "3"
+              - generic [ref=e46]:
+                - generic [ref=e47]: Edad (unidad)
+                - combobox [ref=e48]:
+                  - option "Años" [selected]
+                  - option "Meses"
+              - generic [ref=e49]:
+                - generic [ref=e50]: Peso (kg)
+                - spinbutton [ref=e51]: "5"
+              - generic [ref=e52]:
+                - generic [ref=e53]: Raza
+                - textbox [ref=e54]: Mestiza
+              - generic [ref=e55]:
+                - generic [ref=e56]: Estado sexual
+                - combobox [ref=e57]:
+                  - option "Intacto"
+                  - option "Esterilizado" [selected]
+              - generic [ref=e58]:
+                - generic [ref=e59]: Nivel de actividad
+                - combobox [ref=e60]:
+                  - option "Alto"
+                  - option "Medio" [selected]
+                  - option "Bajo"
+              - generic [ref=e61]:
+                - generic [ref=e62]: Condición corporal
+                - combobox [ref=e63]:
+                  - option "Delgado"
+                  - option "Ideal" [selected]
+                  - option "Sobrepeso"
+                  - option "Obeso"
+              - generic [ref=e64]:
+                - generic [ref=e65]: Objetivo de peso
+                - combobox [ref=e66]:
+                  - option "Mantener" [selected]
+                  - option "Bajar"
+                  - option "Subir"
+              - generic [ref=e67]:
+                - generic [ref=e68]: Comida extra
+                - combobox [ref=e69]:
+                  - option "Nada"
+                  - option "Poco" [selected]
+                  - option "Medio"
+                  - option "Mucho"
+            - generic [ref=e70]:
+              - generic [ref=e71]: Condiciones de salud
+              - 'textbox "Ej: ninguna, alergia a pollo, sensibilidad digestiva..." [ref=e72]': ninguna
+            - generic [ref=e73]:
+              - generic [ref=e74]: Dirección
+              - textbox "Dirección de despacho" [ref=e75]: Av Siempre Viva 123
+            - button "Recomendar alimentos" [ref=e76]:
+              - text: Recomendar alimentos
+              - img
+        - generic [ref=e77]:
+          - heading "Resultados" [level=2] [ref=e78]
+          - paragraph [ref=e79]: Se muestran hasta 6 opciones con imagen, explicación nutricional y nivel de confianza.
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - paragraph [ref=e95]: Mascota guardada
+              - paragraph [ref=e96]: "ID: 891a863f-0050-4faa-8168-6bc174475712"
+            - article [ref=e97]:
+              - generic [ref=e98]:
+                - img "HILLS Science Diet Adult Small & Mini (Small Bites) (2 kg)" [ref=e99]
+                - generic [ref=e100]:
+                  - generic [ref=e101]:
+                    - paragraph [ref=e102]: "Ranking #1"
+                    - paragraph [ref=e103]: "ID: 99"
+                  - heading "HILLS Science Diet Adult Small & Mini (Small Bites) (2 kg)" [level=3] [ref=e104]
+                  - paragraph [ref=e105]: Luna es un macho adulto (3 años), pequeño (5 kg), esterilizado, actividad media y condición corporal ideal con objetivo de mantener. Esta fórmula es para etapa adulto y tamaño pequeño/mini, con enfoque en digestibilidad y soporte de peso ideal según sus notas de fórmula.
+                  - generic [ref=e107]:
+                    - generic [ref=e108]: Confianza
+                    - generic [ref=e109]: 78%
+            - article [ref=e112]:
+              - generic [ref=e113]:
+                - img "ROYAL CANIN MINI ADULTO (2.5 kg)" [ref=e114]
+                - generic [ref=e115]:
+                  - generic [ref=e116]:
+                    - paragraph [ref=e117]: "Ranking #2"
+                    - paragraph [ref=e118]: "ID: 16"
+                  - heading "ROYAL CANIN MINI ADULTO (2.5 kg)" [level=3] [ref=e119]
+                  - paragraph [ref=e120]: Coincide con etapa adulto, tipo seco y tamaño pequeño. Incluye EPA/DHA y L-carnitina declarados, lo que puede ser útil para mantenimiento en perros pequeños esterilizados, sin requerir una dieta de control de peso estricta.
+                  - generic [ref=e122]:
+                    - generic [ref=e123]: Confianza
+                    - generic [ref=e124]: 76%
+            - article [ref=e127]:
+              - generic [ref=e128]:
+                - img "BRIT CARE Adult Small Pollo & Insecto (3 kg)" [ref=e129]
+                - generic [ref=e130]:
+                  - generic [ref=e131]:
+                    - paragraph [ref=e132]: "Ranking #3"
+                    - paragraph [ref=e133]: "ID: 203"
+                  - heading "BRIT CARE Adult Small Pollo & Insecto (3 kg)" [level=3] [ref=e134]
+                  - paragraph [ref=e135]: Etapa adulto, tipo seco y tamaño pequeño. Declara fórmula sin gluten, probiótico y omega-3/6, lo que puede apoyar digestión y piel/pelaje en un plan de mantenimiento. No hay una indicación específica de “sterilised”, pero es compatible por etapa y tamaño.
+                  - generic [ref=e137]:
+                    - generic [ref=e138]: Confianza
+                    - generic [ref=e139]: 72%
+            - article [ref=e142]:
+              - generic [ref=e143]:
+                - img "BRIT CARE Adult Small Breed Lamb & Rice (3 kg)" [ref=e144]
+                - generic [ref=e145]:
+                  - generic [ref=e146]:
+                    - paragraph [ref=e147]: "Ranking #4"
+                    - paragraph [ref=e148]: "ID: 208"
+                  - heading "BRIT CARE Adult Small Breed Lamb & Rice (3 kg)" [level=3] [ref=e149]
+                  - paragraph [ref=e150]: Etapa adulto y tamaño pequeño (1–10 kg) con claim hipoalergénico cordero y arroz. Aunque Luna no reporta sensibilidades, puede ser una opción de mantenimiento con proteína alternativa si se busca rotación o buena tolerancia.
+                  - generic [ref=e152]:
+                    - generic [ref=e153]: Confianza
+                    - generic [ref=e154]: 68%
+            - article [ref=e157]:
+              - generic [ref=e158]:
+                - img "BRAVERY Mini Adulto Pollo (2 kg)" [ref=e159]
+                - generic [ref=e160]:
+                  - generic [ref=e161]:
+                    - paragraph [ref=e162]: "Ranking #5"
+                    - paragraph [ref=e163]: "ID: 83"
+                  - heading "BRAVERY Mini Adulto Pollo (2 kg)" [level=3] [ref=e164]
+                  - paragraph [ref=e165]: Etapa adulto, tipo seco y tamaño pequeño. Fórmula sin cereales con omega 3 y 6 declarados; opción general de mantenimiento para perro pequeño con actividad media. No hay mención específica para esterilizados.
+                  - generic [ref=e167]:
+                    - generic [ref=e168]: Confianza
+                    - generic [ref=e169]: 66%
+            - article [ref=e172]:
+              - generic [ref=e173]:
+                - img "BRAVERY Humedo Perro Pollo y Vegetales (0.29 kg)" [ref=e174]
+                - generic [ref=e175]:
+                  - generic [ref=e176]:
+                    - paragraph [ref=e177]: "Ranking #6"
+                    - paragraph [ref=e178]: "ID: 73"
+                  - heading "BRAVERY Humedo Perro Pollo y Vegetales (0.29 kg)" [level=3] [ref=e179]
+                  - paragraph [ref=e180]: Opción húmeda para etapa adulto (tamaño todas). Puede servir como parte de la dieta (por palatabilidad o hidratación), pero la energía metabolizable figura como N/D, así que el ajuste de ración es menos preciso con la información disponible.
+                  - generic [ref=e182]:
+                    - generic [ref=e183]: Confianza
+                    - generic [ref=e184]: 60%
+            - generic [ref=e187]: "Nota: Estas recomendaciones son generales y deben ajustarse a la ración según evolución de peso y condición corporal. Si aparece cualquier problema digestivo, de piel o urinario, valida el cambio de dieta con tu veterinario."
+  - button "Open Next.js Dev Tools" [ref=e90] [cursor=pointer]:
+    - img [ref=e91]
+  - alert [ref=e94]
