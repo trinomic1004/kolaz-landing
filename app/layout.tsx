@@ -15,15 +15,17 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-display",
 })
 
+const topBarLogo = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imag2e-YCSsxyA9MGcWS017lPzUCiHeT9noYt.png"
+
 export const metadata: Metadata = {
   title: "Kolaz - AI Autoship para Alimento de Mascotas en Chile",
   description:
     "Marketplace inteligente que predice reabastecimiento y entrega el alimento perfecto para tu mascota a través de veterinarios y tiendas locales.",
   generator: "v0.app",
   icons: {
-    icon: "/kolaz-main-logo.png",
-    shortcut: "/kolaz-main-logo.png",
-    apple: "/kolaz-main-logo.png",
+    icon: topBarLogo,
+    shortcut: topBarLogo,
+    apple: topBarLogo,
   },
 }
 
