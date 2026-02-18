@@ -1,81 +1,20 @@
-"use client"
-
-import type React from "react"
-
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
+import { ContactScrollButton } from "@/components/landing/contact-scroll-button"
+import { ScrollAnimateObserver } from "@/components/landing/scroll-animate-observer"
+import { ScrollProgressBar } from "@/components/landing/scroll-progress-bar"
+import { WaitlistModal } from "@/components/landing/waitlist-modal"
+import { WaitlistOpenButton } from "@/components/landing/waitlist-open-button"
 import { ArrowRight, Brain, Calendar, MapPin, Package, Sparkles, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 
 export default function KolazLanding() {
-  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false)
-  const [email, setEmail] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [scrollProgress, setScrollProgress] = useState(0)
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-
-    // Scroll progress indicator
-    const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
-      const progress = (window.scrollY / totalHeight) * 100
-      setScrollProgress(progress)
-    }
-
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up')
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    // Observe all elements with scroll-animate class
-    document.querySelectorAll('.scroll-animate').forEach((el) => {
-      observer.observe(el)
-    })
-
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      observer.disconnect()
-    }
-  }, [])
-
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // TODO: Add actual email collection logic here (e.g., API call)
-    console.log("[v0] Email submitted:", email)
-
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    setIsSubmitting(false)
-    setEmail("")
-    setIsEmailModalOpen(false)
-
-    // Show success message (you can add a toast notification here)
-    alert("¡Gracias! Te notificaremos cuando lancemos Kolaz.")
-  }
-
   return (
     <div className="min-h-screen bg-background">
       {/* Scroll Progress */}
-      <div 
-        className="scroll-progress" 
-        style={{ transform: `scaleX(${scrollProgress / 100})` }}
-      />
+      <ScrollProgressBar />
+      <ScrollAnimateObserver />
       
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#FF0000]/95 backdrop-blur-xl shadow-premium">
@@ -108,15 +47,12 @@ export default function KolazLanding() {
                 Food Recommender
               </Button>
             </Link>
-            <Button
+            <ContactScrollButton
               size="lg"
               className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
-              onClick={() => {
-                document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" })
-              }}
             >
               Contáctanos
-            </Button>
+            </ContactScrollButton>
           </div>
         </div>
       </header>
@@ -150,22 +86,20 @@ export default function KolazLanding() {
                 y tiendas locales de confianza.
               </p>
               <div className="flex flex-col justify-center gap-4 pt-1 sm:flex-row md:gap-5">
-                <Button
+                <WaitlistOpenButton
                   size="lg"
                   className="rounded-full bg-primary text-lg text-primary-foreground hover:bg-primary/90 btn-glow shadow-premium-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                  onClick={() => setIsEmailModalOpen(true)}
                 >
                   Únete a la Lista de Espera
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button
+                </WaitlistOpenButton>
+                <WaitlistOpenButton
                   size="lg"
                   variant="outline"
                   className="rounded-full text-lg bg-transparent border-2 hover:bg-foreground/5 transform hover:scale-105 transition-all duration-300"
-                  onClick={() => setIsEmailModalOpen(true)}
                 >
                   Notifícame al Lanzamiento
-                </Button>
+                </WaitlistOpenButton>
               </div>
             </div>
           </div>
@@ -390,40 +324,7 @@ export default function KolazLanding() {
       </footer>
 
       {/* Email Collection Modal */}
-      <Dialog open={isEmailModalOpen} onOpenChange={setIsEmailModalOpen}>
-        <DialogContent className="sm:max-w-md border-2 shadow-premium-lg">
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-bold text-center bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
-              ¡Únete a la lista de espera!
-            </DialogTitle>
-            <DialogDescription className="text-center text-base mt-3 text-muted-foreground">
-              Sé de los primeros en saber cuando lancemos Kolaz. Te notificaremos por email.
-            </DialogDescription>
-          </DialogHeader>
-          <form onSubmit={handleEmailSubmit} className="space-y-6 mt-6">
-            <div className="space-y-2">
-              <Input
-                type="email"
-                placeholder="tu@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="h-14 text-base border-2 focus:border-primary transition-colors shadow-sm"
-                disabled={isSubmitting}
-              />
-            </div>
-            <Button
-              type="submit"
-              size="lg"
-              className="w-full rounded-full bg-primary text-lg text-primary-foreground hover:bg-primary/90 btn-glow shadow-premium-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Enviando..." : "Notifícame"}
-              {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
-            </Button>
-          </form>
-        </DialogContent>
-      </Dialog>
+      <WaitlistModal />
     </div>
   )
 }
