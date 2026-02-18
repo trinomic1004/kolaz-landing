@@ -488,6 +488,10 @@ export async function recommendFoods(payload: unknown): Promise<RecommendationRe
     foodsRows = await getFoodsRows()
   } catch (error) {
     if (error instanceof SupabaseAdminError) {
+      console.error("[food-recommender] foods read failed:", {
+        status: error.status,
+        message: error.message,
+      })
       throw new RecommenderHttpError(500, "No fue posible leer foods desde Supabase.")
     }
     throw error

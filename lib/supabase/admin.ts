@@ -12,8 +12,27 @@ export class SupabaseAdminError extends Error {
   }
 }
 
+function normalizeEnvValue(value: string | undefined): string | null {
+  if (!value) {
+    return null
+  }
+
+  const trimmed = value.trim()
+  if (!trimmed) {
+    return null
+  }
+
+  const hasDoubleQuotes = trimmed.startsWith('"') && trimmed.endsWith('"')
+  const hasSingleQuotes = trimmed.startsWith("'") && trimmed.endsWith("'")
+  const unquoted = hasDoubleQuotes || hasSingleQuotes ? trimmed.slice(1, -1).trim() : trimmed
+
+  return unquoted || null
+}
+
 function getSupabaseUrl(): string {
-  const value = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL
+  const value =
+    normalizeEnvValue(process.env.SUPABASE_URL) ??
+    normalizeEnvValue(process.env.NEXT_PUBLIC_SUPABASE_URL)
   if (!value) {
     throw new SupabaseAdminError(500, "SUPABASE_URL no está configurado.")
   }
@@ -21,7 +40,7 @@ function getSupabaseUrl(): string {
 }
 
 function getServiceRoleKey(): string {
-  const value = process.env.SUPABASE_SERVICE_ROLE_KEY
+  const value = normalizeEnvValue(process.env.SUPABASE_SERVICE_ROLE_KEY)
   if (!value) {
     throw new SupabaseAdminError(500, "SUPABASE_SERVICE_ROLE_KEY no está configurado.")
   }
