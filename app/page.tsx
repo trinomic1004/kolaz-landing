@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ContactScrollButton } from "@/components/landing/contact-scroll-button"
+import { SiteHeader } from "@/components/layout/site-header"
 import { ScrollAnimateObserver } from "@/components/landing/scroll-animate-observer"
 import { ScrollProgressBar } from "@/components/landing/scroll-progress-bar"
 import { WaitlistModal } from "@/components/landing/waitlist-modal"
@@ -8,6 +8,7 @@ import { WaitlistOpenButton } from "@/components/landing/waitlist-open-button"
 import { ArrowRight, Brain, Calendar, MapPin, Package, Sparkles, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { LANDING_HEADER_ACTIONS } from "@/lib/navigation/header-actions"
 
 export default function KolazLanding() {
   return (
@@ -17,45 +18,7 @@ export default function KolazLanding() {
       <ScrollAnimateObserver />
       
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#FF0000]/95 backdrop-blur-xl shadow-premium">
-        <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-          <div className="flex items-center gap-2">
-            <Link href="/" className="cursor-pointer hover:scale-105 transition-transform duration-300">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imag2e-YCSsxyA9MGcWS017lPzUCiHeT9noYt.png"
-                alt="Kolaz"
-                width={60}
-                height={60}
-                className="h-12 w-12"
-              />
-            </Link>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link href="/demo">
-              <Button
-                size="lg"
-                className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
-              >
-                Demo
-              </Button>
-            </Link>
-            <Link href="/food-recommender">
-              <Button
-                size="lg"
-                className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
-              >
-                Food Recommender
-              </Button>
-            </Link>
-            <ContactScrollButton
-              size="lg"
-              className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
-            >
-              Contáctanos
-            </ContactScrollButton>
-          </div>
-        </div>
-      </header>
+      <SiteHeader actions={LANDING_HEADER_ACTIONS} />
 
       {/* Hero Section */}
       <section className="relative z-0 overflow-hidden bg-gradient-to-b from-background via-background to-muted/20 pt-24 pb-24 md:pt-32 md:pb-36">

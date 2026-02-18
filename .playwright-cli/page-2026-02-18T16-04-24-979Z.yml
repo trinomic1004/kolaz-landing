@@ -1,0 +1,28 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Kolaz" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Kolaz" [ref=e6]
+        - button "Abrir menú de navegación" [ref=e7]:
+          - img
+    - generic [ref=e13]:
+      - img [ref=e15]
+      - heading "Demo de Kolaz" [level=1] [ref=e17]
+      - paragraph [ref=e18]: Estamos poniendo en funcionamiento el demo de Kolaz a través de WhatsApp
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: Pronto podrás probar nuestra plataforma directamente desde WhatsApp y experimentar cómo funciona el sistema de predicción y pedidos automáticos para tu mascota.
+        - generic [ref=e21]:
+          - link "Prueba el Demo" [ref=e22] [cursor=pointer]:
+            - /url: "#"
+            - button "Prueba el Demo" [ref=e23]:
+              - img
+              - text: Prueba el Demo
+          - link "Volver al Inicio" [ref=e24] [cursor=pointer]:
+            - /url: /
+            - button "Volver al Inicio" [ref=e25]
+          - button "Contáctanos" [ref=e26]
+  - button "Open Next.js Dev Tools" [ref=e32] [cursor=pointer]:
+    - img [ref=e33]
+  - alert [ref=e36]

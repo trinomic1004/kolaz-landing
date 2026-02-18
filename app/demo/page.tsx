@@ -1,47 +1,16 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { SiteHeader } from "@/components/layout/site-header"
 import { MessageCircle } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
+import { DEMO_HEADER_ACTIONS } from "@/lib/navigation/header-actions"
 
 export default function DemoPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#FF0000]/95 backdrop-blur-xl shadow-premium">
-        <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-          <div className="flex items-center gap-2">
-            <Link href="/" className="cursor-pointer hover:scale-105 transition-transform duration-300">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imag2e-YCSsxyA9MGcWS017lPzUCiHeT9noYt.png"
-                alt="Kolaz"
-                width={60}
-                height={60}
-                className="h-12 w-12"
-              />
-            </Link>
-          </div>
-          <div className="flex items-center gap-3">
-            <Link href="/food-recommender">
-              <Button
-                size="lg"
-                className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
-              >
-                Food Recommender
-              </Button>
-            </Link>
-            <Link href="/">
-              <Button
-                size="lg"
-                className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
-              >
-                Volver al Inicio
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader actions={DEMO_HEADER_ACTIONS} />
 
       {/* Main Content */}
       <section className="relative py-20 md:py-32 overflow-hidden">

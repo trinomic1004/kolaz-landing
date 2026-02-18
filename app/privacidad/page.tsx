@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
 
-import { Button } from "@/components/ui/button"
+import { SiteHeader } from "@/components/layout/site-header"
 import { Card } from "@/components/ui/card"
+import { PRIVACY_HEADER_ACTIONS } from "@/lib/navigation/header-actions"
 import { ShieldCheck } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Kolaz - Términos y Privacidad",
@@ -73,24 +73,11 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#FF0000] backdrop-blur">
-        <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-          <div className="flex items-center gap-2">
-            <Link href="/" className="cursor-pointer">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imag2e-YCSsxyA9MGcWS017lPzUCiHeT9noYt.png"
-                alt="Kolaz"
-                width={60}
-                height={60}
-                className="h-12 w-12"
-              />
-            </Link>
-          </div>
-          <Button size="lg" className="rounded-full bg-white text-[#FF0000] hover:bg-white/90" asChild>
-            <Link href="/">Volver al inicio</Link>
-          </Button>
-        </div>
-      </header>
+      <SiteHeader
+        actions={PRIVACY_HEADER_ACTIONS}
+        headerClassName="sticky top-0 z-50 w-full border-b border-white/10 bg-[#FF0000] backdrop-blur"
+        logoClassName="cursor-pointer"
+      />
 
       <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-20">
         <div className="container mx-auto max-w-7xl px-6">

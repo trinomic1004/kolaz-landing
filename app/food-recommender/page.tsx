@@ -2,13 +2,13 @@
 
 import type React from "react"
 
-import Image from "next/image"
-import Link from "next/link"
 import { useEffect, useMemo, useState } from "react"
 
+import { SiteHeader } from "@/components/layout/site-header"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { FOOD_RECOMMENDER_HEADER_ACTIONS } from "@/lib/navigation/header-actions"
 import { ArrowRight, Loader2, PawPrint, Sparkles } from "lucide-react"
 
 type FormState = {
@@ -266,37 +266,7 @@ export default function FoodRecommenderPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#FF0000]/95 backdrop-blur-xl shadow-premium">
-        <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-          <Link href="/" className="cursor-pointer hover:scale-105 transition-transform duration-300">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imag2e-YCSsxyA9MGcWS017lPzUCiHeT9noYt.png"
-              alt="Kolaz"
-              width={60}
-              height={60}
-              className="h-12 w-12"
-            />
-          </Link>
-          <div className="flex items-center gap-3">
-            <Link href="/">
-              <Button
-                size="lg"
-                className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
-              >
-                Inicio
-              </Button>
-            </Link>
-            <Link href="/demo">
-              <Button
-                size="lg"
-                className="rounded-full bg-white text-[#FF0000] hover:bg-white/95 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
-              >
-                Demo
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader actions={FOOD_RECOMMENDER_HEADER_ACTIONS} />
 
       <main className="relative overflow-hidden py-14 md:py-20">
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-background" />
