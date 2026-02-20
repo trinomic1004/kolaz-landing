@@ -3,6 +3,8 @@ import { Card } from "@/components/ui/card"
 import { SiteHeader } from "@/components/layout/site-header"
 import { ScrollAnimateObserver } from "@/components/landing/scroll-animate-observer"
 import { ScrollProgressBar } from "@/components/landing/scroll-progress-bar"
+import { StoreInterestModal } from "@/components/landing/store-interest-modal"
+import { StoreInterestOpenButton } from "@/components/landing/store-interest-open-button"
 import { WaitlistModal } from "@/components/landing/waitlist-modal"
 import { WaitlistOpenButton } from "@/components/landing/waitlist-open-button"
 import { ArrowRight, Brain, Calendar, MapPin, Package, Sparkles, Users } from "lucide-react"
@@ -227,10 +229,10 @@ export default function KolazLanding() {
                 de inventario, solo entregas.
               </p>
               <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-                <Button size="lg" variant="secondary" className="rounded-full text-lg shadow-premium-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold">
+                <StoreInterestOpenButton size="lg" variant="secondary" className="rounded-full text-lg shadow-premium-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold">
                   Registra tu Interés
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                </StoreInterestOpenButton>
                 <Button
                   size="lg"
                   variant="outline"
@@ -288,6 +290,7 @@ export default function KolazLanding() {
 
       {/* Email Collection Modal */}
       <WaitlistModal />
+      <StoreInterestModal />
     </div>
   )
 }

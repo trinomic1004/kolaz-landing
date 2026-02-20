@@ -109,6 +109,26 @@ export async function insertPetRow(row: JsonRecord): Promise<JsonRecord> {
   return result
 }
 
+export async function insertStoreRow(row: JsonRecord): Promise<JsonRecord> {
+  const result = await requestJson<JsonRecord[] | JsonRecord>("/rest/v1/stores", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Prefer: "return=representation",
+    },
+    body: JSON.stringify(row),
+  })
+
+  if (Array.isArray(result)) {
+    if (!result[0]) {
+      throw new SupabaseAdminError(500, "Supabase no devolvió la tienda creada.")
+    }
+    return result[0]
+  }
+
+  return result
+}
+
 export async function getFoodsRows(): Promise<JsonRecord[]> {
   const result = await requestJson<JsonRecord[]>("/rest/v1/foods?select=*")
   return Array.isArray(result) ? result : []
