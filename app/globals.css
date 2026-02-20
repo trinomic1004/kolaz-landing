@@ -433,4 +433,50 @@
     transform-origin: left;
     z-index: 100;
   }
+
+  @keyframes brand-marquee-slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .brand-marquee-mask {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  .brand-marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 1rem;
+    animation: brand-marquee-slide 38s linear infinite;
+    will-change: transform;
+  }
+
+  .brand-marquee-track-reverse {
+    animation-direction: reverse;
+    animation-duration: 44s;
+  }
+
+  .brand-marquee-mask:hover .brand-marquee-track {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brand-marquee-mask {
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+
+    .brand-marquee-track {
+      animation: none;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
 }

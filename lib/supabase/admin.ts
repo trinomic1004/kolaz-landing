@@ -134,6 +134,11 @@ export async function getFoodsRows(): Promise<JsonRecord[]> {
   return Array.isArray(result) ? result : []
 }
 
+export async function getFoodsBrandRows(): Promise<JsonRecord[]> {
+  const result = await requestJson<JsonRecord[]>("/rest/v1/foods?select=ID,MARCA,image_path&order=MARCA.asc")
+  return Array.isArray(result) ? result : []
+}
+
 export function getPublicStorageUrl(bucket: string, path: string): string {
   const encodedBucket = encodeURIComponent(bucket)
   const encodedPath = path

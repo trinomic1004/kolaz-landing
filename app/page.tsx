@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card"
 import { SiteHeader } from "@/components/layout/site-header"
 import { ScrollAnimateObserver } from "@/components/landing/scroll-animate-observer"
 import { ScrollProgressBar } from "@/components/landing/scroll-progress-bar"
+import { BrandTilesMarqueeSection } from "@/components/landing/brand-tiles-marquee-section"
 import { StoreInterestModal } from "@/components/landing/store-interest-modal"
 import { StoreInterestOpenButton } from "@/components/landing/store-interest-open-button"
 import { WaitlistModal } from "@/components/landing/waitlist-modal"
@@ -11,8 +12,11 @@ import { ArrowRight, Brain, Calendar, MapPin, Package, Sparkles, Users } from "l
 import Image from "next/image"
 import Link from "next/link"
 import { LANDING_HEADER_ACTIONS } from "@/lib/navigation/header-actions"
+import { getFoodBrandShowcaseTiles } from "@/lib/landing/food-brand-showcase"
 
-export default function KolazLanding() {
+export default async function KolazLanding() {
+  const foodBrands = await getFoodBrandShowcaseTiles()
+
   return (
     <div className="min-h-screen bg-background">
       {/* Scroll Progress */}
@@ -204,6 +208,8 @@ export default function KolazLanding() {
           </div>
         </div>
       </section>
+
+      <BrandTilesMarqueeSection brands={foodBrands} />
 
       {/* For Partners */}
       <div className="py-24 md:py-32 scroll-animate">
