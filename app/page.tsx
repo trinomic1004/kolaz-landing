@@ -55,15 +55,8 @@ export default function KolazLanding() {
                   size="lg"
                   className="rounded-full bg-primary text-lg text-primary-foreground hover:bg-primary/90 btn-glow shadow-premium-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
-                  Únete a la Lista de Espera
+                  Quiero acceso anticipado
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </WaitlistOpenButton>
-                <WaitlistOpenButton
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full text-lg bg-transparent border-2 hover:bg-foreground/5 transform hover:scale-105 transition-all duration-300"
-                >
-                  Notifícame al Lanzamiento
                 </WaitlistOpenButton>
               </div>
             </div>
