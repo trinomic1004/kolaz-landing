@@ -7,6 +7,8 @@ import Link from "next/link"
 import { DEMO_HEADER_ACTIONS } from "@/lib/navigation/header-actions"
 
 export default function DemoPage() {
+  const whatsappDemoUrl = `https://wa.me/15557505237?text=${encodeURIComponent("/start")}`
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -39,15 +41,16 @@ export default function DemoPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-                <Link href="#" onClick={(e) => e.preventDefault()}>
-                  <Button
-                    size="lg"
-                    className="rounded-full bg-[#25D366] text-lg text-white hover:bg-[#20BA5A] shadow-premium-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold px-8"
-                  >
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full bg-[#25D366] text-lg text-white hover:bg-[#20BA5A] shadow-premium-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold px-8"
+                >
+                  <a href={whatsappDemoUrl} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 h-6 w-6" />
                     Prueba el Demo
-                  </Button>
-                </Link>
+                  </a>
+                </Button>
                 <Link href="/">
                   <Button
                     size="lg"
